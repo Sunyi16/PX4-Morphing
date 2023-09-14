@@ -1,0 +1,4 @@
+ bool "PX4 Simple app"
+ default n
+ ---help---
+     Enable PX4 simple app

@@ -1,0 +1,984 @@
+<sdf version='1.6'>
+  <model name='liuzhou6'>
+    <link name='jijia_link'>
+      <pose frame=''>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>8.8e-05 -0.000153 -0.009238 0 -0 0</pose>
+        <mass>0.65203</mass>
+        <inertia>
+          <ixx>0.001301</ixx>
+          <ixy>3.1979e-06</ixy>
+          <ixz>-3.4525e-15</ixz>
+          <iyy>0.0012994</iyy>
+          <iyz>7.8292e-15</iyz>
+          <izz>0.0025338</izz>
+        </inertia>
+      </inertial>
+      <collision name='jijia_link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://liuzhou6/meshes/jijia_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='jijia_link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://liuzhou6/meshes/jijia_link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <link name='1_Link'>
+      <pose frame=''>0 -0.2857 0.014 -1.5708 0 0</pose>
+      <inertial>
+        <pose frame=''>0.000305 -0.0145 0.000688 0 -0 0</pose>
+        <mass>0.017333</mass>
+        <inertia>
+          <ixx>1.4738e-06</ixx>
+          <ixy>-5.5424e-10</ixy>
+          <ixz>-2.3032e-09</ixz>
+          <iyy>1.6426e-06</iyy>
+          <iyz>-1.9237e-08</iyz>
+          <izz>1.0449e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='1_Link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://liuzhou6/meshes/1_Link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='1_Link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://liuzhou6/meshes/1_Link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='1' type='revolute'>
+      <child>1_Link</child>
+      <parent>jijia_link</parent>
+      <axis>
+        <xyz>0 0 -1</xyz>
+        <limit>
+          <lower>-1.5</lower>
+          <upper>1.5</upper>
+          <effort>30</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>0</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='01_Link'>
+      <pose frame=''>0 -0.2857 0.0703 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>0 -0 -0.023377 0 -0 0</pose>
+        <mass>0.019345</mass>
+        <inertia>
+          <ixx>7.0966e-06</ixx>
+          <ixy>9.2769e-06</ixy>
+          <ixz>-3.7458e-12</ixz>
+          <iyy>1.563e-05</iyy>
+          <iyz>-1.0671e-13</iyz>
+          <izz>2.1665e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='01_Link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://liuzhou6/meshes/01_Link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='01_Link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://liuzhou6/meshes/01_Link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='01' type='revolute'>
+      <child>01_Link</child>
+      <parent>1_Link</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>0</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='2_Link'>
+      <pose frame=''>-0.24742 -0.14285 0.014 -1.5708 -0 -1.0472</pose>
+      <inertial>
+        <pose frame=''>0.000305 -0.0145 0.000688 0 -0 0</pose>
+        <mass>0.017333</mass>
+        <inertia>
+          <ixx>1.4738e-06</ixx>
+          <ixy>-5.5409e-10</ixy>
+          <ixz>-2.303e-09</ixz>
+          <iyy>1.6426e-06</iyy>
+          <iyz>-1.9237e-08</iyz>
+          <izz>1.0449e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='2_Link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://liuzhou6/meshes/2_Link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='2_Link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://liuzhou6/meshes/2_Link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='2' type='revolute'>
+      <child>2_Link</child>
+      <parent>jijia_link</parent>
+      <axis>
+        <xyz>0 0 -1</xyz>
+        <limit>
+          <lower>-1.5</lower>
+          <upper>1.5</upper>
+          <effort>30</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>0</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='02_Link'>
+      <pose frame=''>-0.24742 -0.14285 0.0703 0 0 -1.0472</pose>
+      <inertial>
+        <pose frame=''>-0 -0 -0.023412 0 -0 0</pose>
+        <mass>0.019252</mass>
+        <inertia>
+          <ixx>1.7132e-06</ixx>
+          <ixy>-3.3144e-06</ixy>
+          <ixz>-7.6082e-12</ixz>
+          <iyy>2.0636e-05</iyy>
+          <iyz>-2.4563e-12</iyz>
+          <izz>2.1288e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='02_Link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://liuzhou6/meshes/02_Link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='02_Link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://liuzhou6/meshes/02_Link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='02' type='revolute'>
+      <child>02_Link</child>
+      <parent>2_Link</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>0</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='3_Link'>
+      <pose frame=''>-0.24742 0.14285 0.014 -1.5708 -0 -2.0944</pose>
+      <inertial>
+        <pose frame=''>0.000305 -0.0145 0.000688 0 -0 0</pose>
+        <mass>0.017333</mass>
+        <inertia>
+          <ixx>1.4738e-06</ixx>
+          <ixy>-5.5411e-10</ixy>
+          <ixz>-2.303e-09</ixz>
+          <iyy>1.6426e-06</iyy>
+          <iyz>-1.9237e-08</iyz>
+          <izz>1.0449e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='3_Link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://liuzhou6/meshes/3_Link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='3_Link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://liuzhou6/meshes/3_Link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='3' type='revolute'>
+      <child>3_Link</child>
+      <parent>jijia_link</parent>
+      <axis>
+        <xyz>0 0 -1</xyz>
+        <limit>
+          <lower>-1.5</lower>
+          <upper>1.5</upper>
+          <effort>30</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>0</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='03_Link'>
+      <pose frame=''>-0.24742 0.14285 0.0703 0 -0 -2.0944</pose>
+      <inertial>
+        <pose frame=''>-0 0 -0.023377 0 -0 0</pose>
+        <mass>0.019345</mass>
+        <inertia>
+          <ixx>1.9302e-05</ixx>
+          <ixy>6.4217e-06</ixy>
+          <ixz>2.2678e-13</ixz>
+          <iyy>3.4246e-06</iyy>
+          <iyz>3.6574e-12</iyz>
+          <izz>2.1665e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='03_Link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://liuzhou6/meshes/03_Link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='03_Link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://liuzhou6/meshes/03_Link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='03' type='revolute'>
+      <child>03_Link</child>
+      <parent>3_Link</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>0</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='4_Link'>
+      <pose frame=''>0 0.2857 0.014 -1.5708 -0 3.14159</pose>
+      <inertial>
+        <pose frame=''>0.000305 -0.0145 0.000688 0 -0 0</pose>
+        <mass>0.017333</mass>
+        <inertia>
+          <ixx>1.4738e-06</ixx>
+          <ixy>-5.5424e-10</ixy>
+          <ixz>-2.3032e-09</ixz>
+          <iyy>1.6426e-06</iyy>
+          <iyz>-1.9237e-08</iyz>
+          <izz>1.0449e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='4_Link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://liuzhou6/meshes/4_Link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='4_Link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://liuzhou6/meshes/4_Link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='4' type='revolute'>
+      <child>4_Link</child>
+      <parent>jijia_link</parent>
+      <axis>
+        <xyz>0 0 -1</xyz>
+        <limit>
+          <lower>-1.5</lower>
+          <upper>1.5</upper>
+          <effort>30</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>0</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='04_Link'>
+      <pose frame=''>-0 0.2857 0.0703 -0 -0 3.14159</pose>
+      <inertial>
+        <pose frame=''>0 -0 -0.023412 0 -0 0</pose>
+        <mass>0.019252</mass>
+        <inertia>
+          <ixx>1.1517e-06</ixx>
+          <ixy>-2.1054e-07</ixy>
+          <ixz>-5.0945e-12</ixz>
+          <iyy>2.1195e-05</iyy>
+          <iyz>-1.7781e-12</iyz>
+          <izz>2.1286e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='04_Link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://liuzhou6/meshes/04_Link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='04_Link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://liuzhou6/meshes/04_Link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='04' type='revolute'>
+      <child>04_Link</child>
+      <parent>4_Link</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>0</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='5_Link'>
+      <pose frame=''>0.24742 0.14285 0.014 -1.5708 0 2.0944</pose>
+      <inertial>
+        <pose frame=''>0.000305 -0.0145 0.000688 0 -0 0</pose>
+        <mass>0.017333</mass>
+        <inertia>
+          <ixx>1.4738e-06</ixx>
+          <ixy>-5.5409e-10</ixy>
+          <ixz>-2.303e-09</ixz>
+          <iyy>1.6426e-06</iyy>
+          <iyz>-1.9237e-08</iyz>
+          <izz>1.0449e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='5_Link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://liuzhou6/meshes/5_Link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='5_Link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://liuzhou6/meshes/5_Link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='5' type='revolute'>
+      <child>5_Link</child>
+      <parent>jijia_link</parent>
+      <axis>
+        <xyz>0 0 -1</xyz>
+        <limit>
+          <lower>-1.5</lower>
+          <upper>1.5</upper>
+          <effort>30</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>0</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='05_Link'>
+      <pose frame=''>0.24742 0.14285 0.0703 0 0 2.0944</pose>
+      <inertial>
+        <pose frame=''>-0 -0 -0.023377 0 -0 0</pose>
+        <mass>0.019345</mass>
+        <inertia>
+          <ixx>1.8226e-06</ixx>
+          <ixy>-3.6383e-06</ixy>
+          <ixz>-5.6789e-12</ixz>
+          <iyy>2.0904e-05</iyy>
+          <iyz>8.4045e-13</iyz>
+          <izz>2.1664e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='05_Link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://liuzhou6/meshes/05_Link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='05_Link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://liuzhou6/meshes/05_Link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='05' type='revolute'>
+      <child>05_Link</child>
+      <parent>5_Link</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>0</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='6_Link'>
+      <pose frame=''>0.24742 -0.14285 0.014 -1.5708 -0 1.0472</pose>
+      <inertial>
+        <pose frame=''>0.000305 -0.0145 0.000688 0 -0 0</pose>
+        <mass>0.017333</mass>
+        <inertia>
+          <ixx>1.4738e-06</ixx>
+          <ixy>-5.5411e-10</ixy>
+          <ixz>-2.303e-09</ixz>
+          <iyy>1.6426e-06</iyy>
+          <iyz>-1.9237e-08</iyz>
+          <izz>1.0449e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='6_Link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://liuzhou6/meshes/6_Link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='6_Link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://liuzhou6/meshes/6_Link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='6' type='revolute'>
+      <child>6_Link</child>
+      <parent>jijia_link</parent>
+      <axis>
+        <xyz>0 0 -1</xyz>
+        <limit>
+          <lower>-1.5</lower>
+          <upper>1.5</upper>
+          <effort>30</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>0</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='06_Link'>
+      <pose frame=''>0.24742 -0.14285 0.0703 0 -0 1.0472</pose>
+      <inertial>
+        <pose frame=''>-0 -0 -0.023412 0 -0 0</pose>
+        <mass>0.019252</mass>
+        <inertia>
+          <ixx>1.4103e-06</ixx>
+          <ixy>2.2714e-06</ixy>
+          <ixz>-7.7199e-12</ixz>
+          <iyy>2.0938e-05</iyy>
+          <iyz>2.4647e-12</iyz>
+          <izz>2.1287e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='06_Link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://liuzhou6/meshes/06_Link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='06_Link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://liuzhou6/meshes/06_Link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='06' type='revolute'>
+      <child>06_Link</child>
+      <parent>6_Link</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>0</use_parent_model_frame>
+      </axis>
+    </joint>
+       <link name='tilthex/imu_link'>
+      <pose frame=''>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <mass>0.015</mass>
+        <inertia>
+          <ixx>1e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1e-05</iyy>
+          <iyz>0</iyz>
+          <izz>1e-05</izz>
+        </inertia>
+      </inertial>
+    </link>
+
+
+
+    <joint name='liuzhou6/imu_joint' type='revolute'>
+      <child>liuzhou6/imu_link</child>
+      <parent>liuzhou6/jijia_link</parent>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0</upper>
+          <effort>0</effort>
+          <velocity>0</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+
+    <plugin name="gps_plugin" filename="libgazebo_gps_plugin.so">
+        <robotNamespace></robotNamespace>
+        <gpsNoise>true</gpsNoise>
+    </plugin>
+    <plugin name='magnetometer_plugin' filename='libgazebo_magnetometer_plugin.so'>
+      <robotNamespace/>
+      <pubRate>100</pubRate>
+      <noiseDensity>0.0004</noiseDensity>
+      <randomWalk>6.4e-06</randomWalk>
+      <biasCorrelationTime>600</biasCorrelationTime>
+      <magTopic>/mag</magTopic>
+    </plugin>
+    <plugin name='barometer_plugin' filename='libgazebo_barometer_plugin.so'>
+      <robotNamespace/>
+      <pubRate>50</pubRate>
+      <baroTopic>/baro</baroTopic>
+    </plugin>
+
+
+
+    
+  
+    <static>0</static>
+    <plugin name='gazebo_imu_plugin' filename='libgazebo_imu_plugin.so'>
+      <robotNamespace></robotNamespace>
+      <linkName>liuzhou6/imu_link</linkName>
+      <imuTopic>/imu</imuTopic>
+      <gyroscopeNoiseDensity>0.0003394</gyroscopeNoiseDensity>
+      <gyroscopeRandomWalk>3.8785e-05</gyroscopeRandomWalk>
+      <gyroscopeBiasCorrelationTime>1000.0</gyroscopeBiasCorrelationTime>
+      <gyroscopeTurnOnBiasSigma>0.0087</gyroscopeTurnOnBiasSigma>
+      <accelerometerNoiseDensity>0.004</accelerometerNoiseDensity>
+      <accelerometerRandomWalk>0.006</accelerometerRandomWalk>
+      <accelerometerBiasCorrelationTime>300.0</accelerometerBiasCorrelationTime>
+      <accelerometerTurnOnBiasSigma>0.196</accelerometerTurnOnBiasSigma>
+    </plugin>
+
+
+
+
+    <plugin name='rosbag' filename='libgazebo_multirotor_base_plugin.so'>
+      <robotNamespace></robotNamespace>
+      <linkName>liuzhou6/jijia_link</linkName>
+      <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+    </plugin>
+
+
+    <plugin name='front_right_motor_model' filename='libgazebo_motor_model.so'>
+      <robotNamespace></robotNamespace>
+      <jointName>06</jointName>
+      <linkName>06_link</linkName>
+      <turningDirection>ccw</turningDirection>
+      <timeConstantUp>0.0125</timeConstantUp>
+      <timeConstantDown>0.025</timeConstantDown>
+      <maxRotVelocity>1500</maxRotVelocity>
+      <motorConstant>8.54858e-06</motorConstant>
+      <momentConstant>0.06</momentConstant>
+      <commandSubTopic>/gazebo/command/motor_speed</commandSubTopic>
+      <motorNumber>4</motorNumber>
+      <rotorDragCoefficient>0.000806428</rotorDragCoefficient>
+      <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
+      <motorSpeedPubTopic>/motor_speed/4</motorSpeedPubTopic>
+      <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+      <!--
+      <joint_control_pid>
+        <p>0.1</p>
+        <i>0</i>
+        <d>0</d>
+        <iMax>0</iMax>
+        <iMin>0</iMin>
+        <cmdMax>3</cmdMax>
+        <cmdMin>-3</cmdMin>
+      </joint_control_pid>
+      -->
+    </plugin>
+    <plugin name='back_left_motor_model' filename='libgazebo_motor_model.so'>
+      <robotNamespace></robotNamespace>
+      <jointName>01</jointName>
+      <linkName>01_link</linkName>
+      <turningDirection>cw</turningDirection>
+      <timeConstantUp>0.0125</timeConstantUp>
+      <timeConstantDown>0.025</timeConstantDown>
+      <maxRotVelocity>1500</maxRotVelocity>
+      <motorConstant>8.54858e-06</motorConstant>
+      <momentConstant>0.06</momentConstant>
+      <commandSubTopic>/gazebo/command/motor_speed</commandSubTopic>
+      <motorNumber>5</motorNumber>
+      <rotorDragCoefficient>0.000806428</rotorDragCoefficient>
+      <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
+      <motorSpeedPubTopic>/motor_speed/5</motorSpeedPubTopic>
+      <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+      <!--
+      <joint_control_pid>
+        <p>0.1</p>
+        <i>0</i>
+        <d>0</d>
+        <iMax>0</iMax>
+        <iMin>0</iMin>
+        <cmdMax>3</cmdMax>
+        <cmdMin>-3</cmdMin>
+      </joint_control_pid>
+      -->
+    </plugin>
+    <plugin name='front_left_motor_model' filename='libgazebo_motor_model.so'>
+      <robotNamespace></robotNamespace>
+      <jointName>02</jointName>
+      <linkName>02_link</linkName>
+      <turningDirection>cw</turningDirection>
+      <timeConstantUp>0.0125</timeConstantUp>
+      <timeConstantDown>0.025</timeConstantDown>
+      <maxRotVelocity>1500</maxRotVelocity>
+      <motorConstant>8.54858e-06</motorConstant>
+      <momentConstant>0.06</momentConstant>
+      <commandSubTopic>/gazebo/command/motor_speed</commandSubTopic>
+      <motorNumber>2</motorNumber>
+      <rotorDragCoefficient>0.000806428</rotorDragCoefficient>
+      <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
+      <motorSpeedPubTopic>/motor_speed/2</motorSpeedPubTopic>
+      <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+      <!--
+      <joint_control_pid>
+        <p>0.1</p>
+        <i>0</i>
+        <d>0</d>
+        <iMax>0</iMax>
+        <iMin>0</iMin>
+        <cmdMax>3</cmdMax>
+        <cmdMin>-3</cmdMin>
+      </joint_control_pid>
+      -->
+    </plugin>
+    <plugin name='back_right_motor_model' filename='libgazebo_motor_model.so'>
+      <robotNamespace></robotNamespace>
+      <jointName>03</jointName>
+      <linkName>03_link</linkName>
+      <turningDirection>ccw</turningDirection>
+      <timeConstantUp>0.0125</timeConstantUp>
+      <timeConstantDown>0.025</timeConstantDown>
+      <maxRotVelocity>1500</maxRotVelocity>
+      <motorConstant>8.54858e-06</motorConstant>
+      <momentConstant>0.06</momentConstant>
+      <commandSubTopic>/gazebo/command/motor_speed</commandSubTopic>
+      <motorNumber>3</motorNumber>
+      <rotorDragCoefficient>0.000806428</rotorDragCoefficient>
+      <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
+      <motorSpeedPubTopic>/motor_speed/3</motorSpeedPubTopic>
+      <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+      <!--
+      <joint_control_pid>
+        <p>0.1</p>
+        <i>0</i>
+        <d>0</d>
+        <iMax>0</iMax>
+        <iMin>0</iMin>
+        <cmdMax>3</cmdMax>
+        <cmdMin>-3</cmdMin>
+      </joint_control_pid>
+      -->
+    </plugin>
+    <plugin name='back_left_motor_model' filename='libgazebo_motor_model.so'>
+      <robotNamespace></robotNamespace>
+      <jointName>04</jointName>
+      <linkName>04_link</linkName>
+      <turningDirection>cw</turningDirection>
+      <timeConstantUp>0.0125</timeConstantUp>
+      <timeConstantDown>0.025</timeConstantDown>
+      <maxRotVelocity>1500</maxRotVelocity>
+      <motorConstant>8.54858e-06</motorConstant>
+      <momentConstant>0.06</momentConstant>
+      <commandSubTopic>/gazebo/command/motor_speed</commandSubTopic>
+      <motorNumber>0</motorNumber>
+      <rotorDragCoefficient>0.000806428</rotorDragCoefficient>
+      <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
+      <motorSpeedPubTopic>/motor_speed/0</motorSpeedPubTopic>
+      <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+      <!--
+      <joint_control_pid>
+        <p>0.1</p>
+        <i>0</i>
+        <d>0</d>
+        <iMax>0</iMax>
+        <iMin>0</iMin>
+        <cmdMax>3</cmdMax>
+        <cmdMin>-3</cmdMin>
+      </joint_control_pid>
+      -->
+    </plugin>
+    <plugin name='front_left_motor_model' filename='libgazebo_motor_model.so'>
+      <robotNamespace></robotNamespace>
+      <jointName>05</jointName>
+      <linkName>05_link</linkName>
+      <turningDirection>ccw</turningDirection>
+      <timeConstantUp>0.0125</timeConstantUp>
+      <timeConstantDown>0.025</timeConstantDown>
+      <maxRotVelocity>1500</maxRotVelocity>
+      <motorConstant>8.54858e-06</motorConstant>
+      <momentConstant>0.06</momentConstant>
+      <commandSubTopic>/gazebo/command/motor_speed</commandSubTopic>
+      <motorNumber>1</motorNumber>
+      <rotorDragCoefficient>0.000806428</rotorDragCoefficient>
+      <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
+      <motorSpeedPubTopic>/motor_speed/1</motorSpeedPubTopic>
+      <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+      <!--
+      <joint_control_pid>
+        <p>0.1</p>
+        <i>0</i>
+        <d>0</d>
+        <iMax>0</iMax>
+        <iMin>0</iMin>
+        <cmdMax>3</cmdMax>
+        <cmdMin>-3</cmdMin>
+      </joint_control_pid>
+      -->
+    </plugin>
+
+
+      <plugin name='mavlink_interface' filename='libgazebo_mavlink_interface.so'>
+      <robotNamespace></robotNamespace>
+      <imuSubTopic>/imu</imuSubTopic>
+      <gpsSubTopic>/gps</gpsSubTopic>
+      <magSubTopic>/mag</magSubTopic>
+      <baroSubTopic>/baro</baroSubTopic>
+      <mavlink_addr>INADDR_ANY</mavlink_addr>
+      <mavlink_udp_port>14560</mavlink_udp_port>
+      <serialEnabled>false</serialEnabled>
+      <serialDevice>/dev/ttyACM0</serialDevice>
+      <baudRate>921600</baudRate>
+      <qgc_addr>INADDR_ANY</qgc_addr>
+      <qgc_udp_port>14550</qgc_udp_port>
+      <sdk_addr>INADDR_ANY</sdk_addr>
+      <sdk_udp_port>14540</sdk_udp_port>
+      <hil_mode>false</hil_mode>
+      <hil_state_level>false</hil_state_level>
+      <enable_lockstep>true</enable_lockstep>
+      <use_tcp>true</use_tcp>
+      <motorSpeedCommandPubTopic>/gazebo/command/motor_speed</motorSpeedCommandPubTopic>
+      <control_channels>
+        <channel name="rotor0">
+          <input_index>0</input_index>
+          <input_offset>0</input_offset>
+          <input_scaling>1500</input_scaling>
+          <zero_position_disarmed>0</zero_position_disarmed>
+          <zero_position_armed>100</zero_position_armed>
+          <joint_control_type>velocity</joint_control_type>
+          <joint_name>06</joint_name>
+        </channel>
+
+         <channel name="rotor1">
+          <input_index>1</input_index>
+          <input_offset>0</input_offset>
+          <input_scaling>1500</input_scaling>
+          <zero_position_disarmed>0</zero_position_disarmed>
+          <zero_position_armed>100</zero_position_armed>
+          <joint_control_type>velocity</joint_control_type>
+          <joint_name>01</joint_name>
+        </channel>
+
+        <channel name="rotor2">
+          <input_index>2</input_index>
+          <input_offset>0</input_offset>
+          <input_scaling>1500</input_scaling>
+          <zero_position_disarmed>0</zero_position_disarmed>
+          <zero_position_armed>100</zero_position_armed>
+          <joint_control_type>velocity</joint_control_type>
+          <joint_name>02</joint_name>
+        </channel>
+
+        <channel name="rotor3">
+          <input_index>3</input_index>
+          <input_offset>0</input_offset>
+          <input_scaling>1500</input_scaling>
+          <zero_position_disarmed>0</zero_position_disarmed>
+          <zero_position_armed>100</zero_position_armed>
+          <joint_control_type>velocity</joint_control_type>
+          <joint_name>03</joint_name>
+        </channel>
+
+        <channel name="rotor4">
+          <input_index>4</input_index>
+          <input_offset>0</input_offset>
+          <input_scaling>1500</input_scaling>
+          <zero_position_disarmed>0</zero_position_disarmed>
+          <zero_position_armed>100</zero_position_armed>
+          <joint_control_type>velocity</joint_control_type>
+          <joint_name>04</joint_name>
+        </channel>
+
+        <channel name="rotor5">
+          <input_index>5</input_index>
+          <input_offset>0</input_offset>
+          <input_scaling>1500</input_scaling>
+          <zero_position_disarmed>0</zero_position_disarmed>
+          <zero_position_armed>100</zero_position_armed>
+          <joint_control_type>velocity</joint_control_type>
+          <joint_name>05</joint_name>
+        </channel> 
+
+<!--         <channel name="servo5">
+          <input_index>6</input_index>
+          <input_offset>0</input_offset>
+          <input_scaling>1500</input_scaling>
+          <zero_position_disarmed>0</zero_position_disarmed>
+          <zero_position_armed>100</zero_position_armed>
+          <joint_control_type>position</joint_control_type>
+          <joint_name>5</joint_name>
+        </channel>  -->
+
+         </control_channels>
+        </plugin>
+  </model>
+</sdf>

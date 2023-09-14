@@ -1,0 +1,277 @@
+<?xml version="1.0"?>
+
+
+
+
+<robot name="tilthex" xmlns:xacro="http://ros.org/wiki/xacro">
+  <!-- Properties -->
+  <xacro:property name="namespace" value="tilthex" />
+  <xacro:property name="rotor_velocity_slowdown_sim" value="10" />
+
+  <xacro:property name="use_mesh_file" value="true" />
+  <xacro:property name="body_mesh_file" value="package://tilthex/meshes/base_link.STL" />
+  <xacro:property name="servo_mesh_file" value="package://tilthex/meshes/servo1_Link.STL" />
+  <xacro:property name="rotor_mesh_file" value="package://tilthex/meshes/rotor1_Link.STL" />
+  <xacro:property name="body_mass" value="1.8423" /> <!-- [kg] -->
+
+
+  <xacro:property name="servo_mass" value="0.017333" /> <!-- [kg] -->
+  <xacro:property name="rotor_mass" value="0.019345" /> <!-- [kg] -->
+  
+  <xacro:property name="body_inertia">
+    <inertia   ixx="0.001301" ixy="3.1979E-06" ixz="-3.4525E-15" iyy="0.0012994" iyz="7.8292E-15" izz="0.0025338" /> <!-- [kg m^2] [kg m^2] [kg m^2] [kg m^2] [kg m^2] [kg m^2] -->
+  </xacro:property>
+
+
+  <!-- 升力 参数-->
+  <xacro:property name="motor_constant" value="1.7088e-05" /> <!-- [kg .m/s^2] -->
+  <xacro:property name="moment_constant" value="0.016" /> <!-- [m] -->
+  <xacro:property name="time_constant_up" value="0.0125" /> <!-- [s] -->
+  <xacro:property name="time_constant_down" value="0.025" /> <!-- [s] -->
+  <xacro:property name="max_rot_velocity" value="838" /> <!-- [rad/s] -->
+  <xacro:property name="rotor_drag_coefficient" value="0" />
+  <xacro:property name="rolling_moment_coefficient" value="0" />
+
+
+  <!-- Included URDF Files -->
+  <xacro:include filename="$(find tilthex)/urdf/tiltable_rotors_base.xacro" />
+
+  <!-- Instantiate tiltable_rotors_base once -->
+  <xacro:tiltable_rotors_base_macro
+    robot_namespace="${namespace}"
+    mass="${body_mass}"
+    mesh_file="${body_mesh_file}"
+    >
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <xacro:insert_block name="body_inertia" />
+  </xacro:tiltable_rotors_base_macro>
+
+
+
+  <!-- Instantiate 6 rotor servo-->
+  <!--                                servo1                                     -->
+  <xacro:servo_macro
+    robot_namespace="${namespace}" 
+    suffix="1" 
+    mass="${servo_mass}" 
+    meshfile="${servo_mesh_file}" 
+    direction="ccw"
+    p="1"
+    i="0.1"
+    d="0.01"
+    color="Grey"
+    >
+     <origin        xyz="0.00030543 -0.0145 0.00068789"        rpy="0 0 0" />
+     <origin      xyz="0 -0.2857 0.014"      rpy="-1.5708 0 0" />
+
+  </xacro:servo_macro>
+
+  <xacro:servo_macro
+    robot_namespace="${namespace}" 
+    suffix="2" 
+    mass="${servo_mass}" 
+    meshfile="${servo_mesh_file}" 
+    direction="ccw"
+    p="1"
+    i="0.1"
+    d="0.01"
+    color="Grey"
+    >
+     <origin        xyz="0.00030543 -0.0145 0.00068789"        rpy="0 0 0" />
+     <origin      xyz="-0.24742 -0.14285 0.014"      rpy="-1.5708 0 -1.0472" />
+
+  </xacro:servo_macro>
+
+  <xacro:servo_macro
+    robot_namespace="${namespace}" 
+    suffix="3" 
+    mass="${servo_mass}" 
+    meshfile="${servo_mesh_file}" 
+    direction="ccw"
+    p="1"
+    i="0.1"
+    d="0.01"
+    color="Grey"
+    >
+     <origin        xyz="0.00030543 -0.0145 0.00068789"        rpy="0 0 0" />
+     <origin      xyz="-0.24742 0.14285 0.014"      rpy="-1.5708 0 -2.0944" />
+
+  </xacro:servo_macro>
+
+  <xacro:servo_macro
+    robot_namespace="${namespace}" 
+    suffix="4" 
+    mass="${servo_mass}" 
+    meshfile="${servo_mesh_file}" 
+    direction="ccw"
+    p="1"
+    i="0.1"
+    d="0.01"
+    color="Grey"
+    >
+     <origin        xyz="0.00030543 -0.0145 0.00068789"        rpy="0 0 0" />
+     <origin      xyz="0 0.2857 0.014"      rpy="-1.5708 0 -3.1416" />
+
+  </xacro:servo_macro>
+
+  <xacro:servo_macro
+    robot_namespace="${namespace}" 
+    suffix="5" 
+    mass="${servo_mass}" 
+    meshfile="${servo_mesh_file}" 
+    direction="ccw"
+    p="1"
+    i="0.1"
+    d="0.01"
+    color="Grey"
+    >
+     <origin        xyz="0.00030543 -0.0145 0.00068789"        rpy="0 0 0" />
+     <origin      xyz="0.24742 0.14285 0.014"      rpy="-1.5708 0 2.0944" />
+
+  </xacro:servo_macro>
+
+  <xacro:servo_macro
+    robot_namespace="${namespace}" 
+    suffix="6" 
+    mass="${servo_mass}" 
+    meshfile="${servo_mesh_file}" 
+    direction="ccw"
+    p="1"
+    i="0.1"
+    d="0.01"
+    color="Grey"
+    >
+     <origin        xyz="0.00030544 -0.0145 0.00068789"        rpy="0 0 0" />
+     <origin      xyz="0.24742 -0.14285 0.014"      rpy="-1.5708 0 1.0472" />
+
+  </xacro:servo_macro>
+
+
+<!--                       Instantiate 6 rotors                              -->
+
+<!--                                Rotor1                                     -->
+  <xacro:rotor_macro
+    robot_namespace="${namespace}"  
+    suffix="1" 
+    mass="${rotor_mass}" 
+    meshfile="${rotor_mesh_file}"  
+    direction="cw"
+    motor_constant="${motor_constant}"
+    moment_constant="${moment_constant}"
+    time_constant_up="${time_constant_up}"
+    time_constant_down="${time_constant_down}"
+    max_rot_velocity="${max_rot_velocity}"
+    rotor_drag_coefficient="${rotor_drag_coefficient}"
+    rolling_moment_coefficient="${rolling_moment_coefficient}"
+    rotor_velocity_slowdown_sim="${rotor_velocity_slowdown_sim}"
+    color="Red"
+    >
+    <origin        xyz="1.4898E-07 -1.4046E-07 -0.023377"        rpy="0 0 0" />     <!-- link_origin -->
+    <origin      xyz="0 -0.0563 0"      rpy="1.5708 0 0" />        <!-- joint_origin -->
+  </xacro:rotor_macro>
+
+  <!--                                Rotor2                                     -->
+  <xacro:rotor_macro
+    robot_namespace="${namespace}"  
+    suffix="2" 
+    mass="${rotor_mass}" 
+    meshfile="${rotor_mesh_file}"  
+    direction="ccw"
+    motor_constant="${motor_constant}"
+    moment_constant="${moment_constant}"
+    time_constant_up="${time_constant_up}"
+    time_constant_down="${time_constant_down}"
+    max_rot_velocity="${max_rot_velocity}"
+    rotor_drag_coefficient="${rotor_drag_coefficient}"
+    rolling_moment_coefficient="${rolling_moment_coefficient}"
+    rotor_velocity_slowdown_sim="${rotor_velocity_slowdown_sim}"
+    color="Blue"
+    >
+    <origin        xyz="-1.7647E-07 -6.8929E-08 -0.023412"        rpy="0 0 0" />     <!-- link_origin -->
+    <origin      xyz="0 -0.0563 0"      rpy="1.5708 0 0" />        <!-- joint_origin -->
+  </xacro:rotor_macro>
+
+  <!--                                Rotor3                                     -->
+  <xacro:rotor_macro
+    robot_namespace="${namespace}"  
+    suffix="3" 
+    mass="${rotor_mass}" 
+    meshfile="${rotor_mesh_file}"  
+    direction="cw"
+    motor_constant="${motor_constant}"
+    moment_constant="${moment_constant}"
+    time_constant_up="${time_constant_up}"
+    time_constant_down="${time_constant_down}"
+    max_rot_velocity="${max_rot_velocity}"
+    rotor_drag_coefficient="${rotor_drag_coefficient}"
+    rolling_moment_coefficient="${rolling_moment_coefficient}"
+    rotor_velocity_slowdown_sim="${rotor_velocity_slowdown_sim}"
+    color="Red"
+    >
+    <origin        xyz="-3.3766E-08 3.4763E-08 -0.023377"        rpy="0 0 0" />     <!-- link_origin -->
+    <origin      xyz="0 -0.0563 0"      rpy="1.5708 0 0" />        <!-- joint_origin -->
+  </xacro:rotor_macro>
+
+  <!--                                Rotor4                                     -->
+  <xacro:rotor_macro
+    robot_namespace="${namespace}"  
+    suffix="4" 
+    mass="${rotor_mass}" 
+    meshfile="${rotor_mesh_file}"  
+    direction="ccw"
+    motor_constant="${motor_constant}"
+    moment_constant="${moment_constant}"
+    time_constant_up="${time_constant_up}"
+    time_constant_down="${time_constant_down}"
+    max_rot_velocity="${max_rot_velocity}"
+    rotor_drag_coefficient="${rotor_drag_coefficient}"
+    rolling_moment_coefficient="${rolling_moment_coefficient}"
+    rotor_velocity_slowdown_sim="${rotor_velocity_slowdown_sim}"
+    color="Blue"
+    >
+    <origin        xyz="1.0513E-07 -2.6158E-08 -0.023412"        rpy="0 0 0" />     <!-- link_origin -->
+    <origin      xyz="0 -0.0563 0"      rpy="1.5708 0 0" />        <!-- joint_origin -->
+  </xacro:rotor_macro>
+
+  <!--                                Rotor5                                     -->
+  <xacro:rotor_macro
+    robot_namespace="${namespace}"  
+    suffix="5" 
+    mass="${rotor_mass}" 
+    meshfile="${rotor_mesh_file}"  
+    direction="cw"
+    motor_constant="${motor_constant}"
+    moment_constant="${moment_constant}"
+    time_constant_up="${time_constant_up}"
+    time_constant_down="${time_constant_down}"
+    max_rot_velocity="${max_rot_velocity}"
+    rotor_drag_coefficient="${rotor_drag_coefficient}"
+    rolling_moment_coefficient="${rolling_moment_coefficient}"
+    rotor_velocity_slowdown_sim="${rotor_velocity_slowdown_sim}"
+    color="Red"
+    >
+    <origin        xyz="-1.948E-07 -4.041E-08 -0.023377"        rpy="0 0 0" />     <!-- link_origin -->
+    <origin      xyz="0 -0.0563 0"      rpy="1.5708 0 0" />        <!-- joint_origin -->
+  </xacro:rotor_macro>
+
+  <!--                                Rotor5                                     -->
+  <xacro:rotor_macro
+    robot_namespace="${namespace}"  
+    suffix="6" 
+    mass="${rotor_mass}" 
+    meshfile="${rotor_mesh_file}"  
+    direction="ccw"
+    motor_constant="${motor_constant}"
+    moment_constant="${moment_constant}"
+    time_constant_up="${time_constant_up}"
+    time_constant_down="${time_constant_down}"
+    max_rot_velocity="${max_rot_velocity}"
+    rotor_drag_coefficient="${rotor_drag_coefficient}"
+    rolling_moment_coefficient="${rolling_moment_coefficient}"
+    rotor_velocity_slowdown_sim="${rotor_velocity_slowdown_sim}"
+    color="Blue"
+    >
+    <origin        xyz="-1.4657E-07 -5.6663E-09 -0.023412"        rpy="0 0 0" />     <!-- link_origin -->
+    <origin      xyz="0 -0.0563 0"      rpy="1.5708 0 0" />        <!-- joint_origin -->
+  </xacro:rotor_macro>
+  </robot>

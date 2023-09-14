@@ -1,0 +1,331 @@
+<sdf version='1.6'>
+  <model name='liuzhou2'>
+    <link name='jijia_link'>
+      <pose frame=''>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>-0.24013 0.15504 -0.067896 0 -0 0</pose>
+        <mass>0.75603</mass>
+        <inertia>
+          <ixx>0.0013045</ixx>
+          <ixy>-5.803e-07</ixy>
+          <ixz>7.4355e-15</ixz>
+          <iyy>0.001311</iyy>
+          <iyz>-6.6503e-15</iyz>
+          <izz>0.0025437</izz>
+        </inertia>
+      </inertial>
+      <collision name='jijia_link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://liuzhou2/meshes/jijia_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='jijia_link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://liuzhou2/meshes/jijia_link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <link name='motor1_Link'>
+      <pose frame=''>-0.25425 -0.13031 0 0 0 -1.535</pose>
+      <inertial>
+        <pose frame=''>0 -0 -0.016928 0 -0 0</pose>
+        <mass>0.0193451</mass>
+        <inertia>
+          <ixx>2.13852e-05</ixx>
+          <ixy>1.95541e-06</ixy>
+          <ixz>-1.38508e-12</ixz>
+          <iyy>1.3414e-06</iyy>
+          <iyz>-3.25631e-12</iyz>
+          <izz>2.16646e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='motor1_Link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://liuzhou2/meshes/motor1_Link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='motor1_Link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://liuzhou2/meshes/motor1_Link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='motor1' type='revolute'>
+      <child>motor1_Link</child>
+      <parent>jijia_link</parent>
+      <axis>
+        <xyz>0 0 -1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>0</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='motor2_Link'>
+      <pose frame=''>-0.49423 0.024719 0 0 0 -2.8531</pose>
+      <inertial>
+        <pose frame=''>0 -0 -0.016962 0 -0 0</pose>
+        <mass>0.0192525</mass>
+        <inertia>
+          <ixx>2.10983e-05</ixx>
+          <ixy>1.41583e-06</ixy>
+          <ixz>-1.05382e-12</ixz>
+          <iyy>1.25e-06</iyy>
+          <iyz>-8.21409e-12</iyz>
+          <izz>2.1287e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='motor2_Link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://liuzhou2/meshes/motor2_Link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='motor2_Link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://liuzhou2/meshes/motor2_Link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='motor2' type='revolute'>
+      <child>motor2_Link</child>
+      <parent>jijia_link</parent>
+      <axis>
+        <xyz>0 0 -1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>0</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='motor3_Link'>
+      <pose frame=''>-0.47996 0.31006 0 0 -0 2.6538</pose>
+      <inertial>
+        <pose frame=''>0 0 -0.016928 0 -0 0</pose>
+        <mass>0.0193451</mass>
+        <inertia>
+          <ixx>1.39831e-05</ixx>
+          <ixy>-9.86936e-06</ixy>
+          <ixz>-2.14731e-13</ixz>
+          <iyy>8.74368e-06</iyy>
+          <iyz>-3.74114e-12</iyz>
+          <izz>2.16648e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='motor3_Link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://liuzhou2/meshes/motor3_Link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='motor3_Link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://liuzhou2/meshes/motor3_Link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='motor3' type='revolute'>
+      <child>motor3_Link</child>
+      <parent>jijia_link</parent>
+      <axis>
+        <xyz>0 0 -1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>0</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='motor4_Link'>
+      <pose frame=''>-0.22571 0.44037 -0.00705 1.5708 -0 -2.5627</pose>
+      <inertial>
+        <pose frame=''>-0 -0.009912 -0 0 -0 0</pose>
+        <mass>0.0192525</mass>
+        <inertia>
+          <ixx>5.10683e-06</ixx>
+          <ixy>-7.60556e-12</ixy>
+          <ixz>-7.98041e-06</ixz>
+          <iyy>2.12883e-05</iyy>
+          <iyz>-2.46632e-12</iyz>
+          <izz>1.72428e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='motor4_Link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://liuzhou2/meshes/motor4_Link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='motor4_Link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://liuzhou2/meshes/motor4_Link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='motor4' type='revolute'>
+      <child>motor4_Link</child>
+      <parent>jijia_link</parent>
+      <axis>
+        <xyz>0 -1 0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>0</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='motor5_Link'>
+      <pose frame=''>0.014271 0.28534 -0.00705 1.5708 0 2.6732</pose>
+      <inertial>
+        <pose frame=''>-0 -0.009878 -0 0 -0 0</pose>
+        <mass>0.019345</mass>
+        <inertia>
+          <ixx>1.9918e-05</ixx>
+          <ixy>2.3347e-12</ixy>
+          <ixz>5.5743e-06</ixz>
+          <iyy>2.1665e-05</iyy>
+          <iyz>-2.8244e-12</iyz>
+          <izz>2.8082e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='motor5_Link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://liuzhou2/meshes/motor5_Link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='motor5_Link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://liuzhou2/meshes/motor5_Link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='motor5' type='revolute'>
+      <child>motor5_Link</child>
+      <parent>jijia_link</parent>
+      <axis>
+        <xyz>0 -1 0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>0</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='motor6_Link'>
+      <pose frame=''>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose frame=''>0 0 0.16928 0 0 0</pose>
+        <mass>0</mass>
+        <inertia>
+          <ixx>0</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0</iyy>
+          <iyz>0</iyz>
+          <izz>0</izz>
+        </inertia>
+      </inertial>
+      <collision name='motor6_Link_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://liuzhou2/meshes/motor6_Link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='motor6_Link_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://liuzhou2/meshes/motor6_Link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='motor6' type='revolute'>
+      <child>motor6_Link</child>
+      <parent>jijia_link</parent>
+      <axis>
+        <xyz>0 0 -1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>0</use_parent_model_frame>
+      </axis>
+    </joint>
+  </model>
+</sdf>
